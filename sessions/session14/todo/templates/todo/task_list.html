@@ -1,0 +1,8 @@
+{% block content %}
+    <h2>Tasks</h2>
+    <ul>
+        {% for Task in object_list %}
+            <li>[COMPLETED: {{ Task.is_done }}] | {{ Task.title }} - [{{ Task.due_date }}] : {{ Task.description }}</li>
+            {% endfor %}
+    </ul>
+    {% endblock %}
