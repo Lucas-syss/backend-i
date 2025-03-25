@@ -1,0 +1,24 @@
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_PASSWORD: qwerty
+      POSTGRES_DB: db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    container_name: db
+    ports:
+      - 5432:5432
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    links:
+      - db
+volumes:
+  postgres_data:
