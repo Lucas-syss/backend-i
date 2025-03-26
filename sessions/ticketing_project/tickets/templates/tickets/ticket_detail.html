@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Details</title>
+</head>
+<body>
+    <h1>{{ object.subject }}</h1>
+    <p>Status: {{ object.status }}</p>
+    <p>Priority: {{ object.priority }}</p>
+    <p>Description: {{ object.description }}</p>
+    <a href="{% url 'ticket-update' object.pk %}">Edit</a>
+</body>
+</html>
