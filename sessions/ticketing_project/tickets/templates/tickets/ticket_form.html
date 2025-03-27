@@ -1,0 +1,27 @@
+{% extends "tickets/base.html" %}
+
+{% block title %}Create Ticket{% endblock %}
+
+{% block content %}
+    <h1>Create New Support Ticket</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label>Subject:</label>
+            <input type="text" name="subject" required>
+        </div>
+        <div>
+            <label>Description:</label>
+            <textarea name="description" required></textarea>
+        </div>
+        <div>
+            <label>Priority:</label>
+            <select name="priority">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+            </select>
+        </div>
+        <button type="submit">Submit Ticket</button>
+    </form>
+{% endblock %}
