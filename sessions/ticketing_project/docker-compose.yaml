@@ -9,11 +9,12 @@ services:
     build: 
       dockerfile: Dockerfile
       context: .
+    command: poetry run uvicorn ticketing_system.asgi:application --host 0.0.0.0 --port 8000 --reload
     ports:
       - 8000:8000
     env_file:
       - .env
     depends_on:
       - db
-    links:
-      - db
+    volumes:
+      - ./:/app/

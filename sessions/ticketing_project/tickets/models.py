@@ -38,7 +38,7 @@ class Ticket(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name='created_tickets',
+        related_name='tickets',
         verbose_name='Created By'
     )
     assigned_to = models.ForeignKey(
