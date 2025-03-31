@@ -1,0 +1,19 @@
+<h1>Create Agent</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Agent</button>
+</form>
+
+{% if form.errors %}
+  <div class="error">
+    <p>There were errors with your submission:</p>
+    <ul>
+      {% for field in form %}
+        {% for error in field.errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

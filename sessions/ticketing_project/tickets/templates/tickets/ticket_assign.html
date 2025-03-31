@@ -1,0 +1,21 @@
+{% block title %}Assign Agent{% endblock %}
+
+{% block content %}
+    <h1>Assign Agent to Ticket</h1>
+    <p><strong>Ticket ID:</strong> {{ object.id }}</p>
+    <p><strong>Subject:</strong> {{ object.subject }}</p>
+    <p><strong>Status:</strong> {{ object.status }}</p>
+    <p><strong>Priority:</strong> {{ object.priority }}</p>
+    <p><strong>Current Assigned Agent:</strong> {{ object.assigned_to|default:"Unassigned" }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="id_assigned_to">Select Agent:</label>
+            {{ form.assigned_to }}
+        </div>
+        <button type="submit">Assign Agent</button>
+    </form>
+
+    <a href="{% url 'admin-dashboard' %}">Back to Dashboard</a>
+{% endblock %}

@@ -14,6 +14,8 @@
             </li>
         {% endfor %}
     </ul>
-    <button type="submit">Create Ticket</button>
+    <form action="{% url 'ticket-create' %}" method="get">
+        <button type="submit">Create Ticket</button>
+    </form>
 </body>
 </html>
