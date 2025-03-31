@@ -6,7 +6,7 @@ class TicketingSystemTests(TestCase):
     def setUp(self):
         # Create users
         self.admin_user = User.objects.create_superuser(
-            username="admin", email="admin@example.com", password="admin123"
+            username="admin", email="admin@example.com", password="admin123", role="admin"
         )
         self.agent_user = User.objects.create_user(
             username="agent", email="agent@example.com", password="agent123", role="agent", is_staff=True

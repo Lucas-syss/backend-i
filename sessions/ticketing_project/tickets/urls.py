@@ -4,12 +4,13 @@ from django.urls import path
 from tickets.views import (
     TicketListView, TicketDetailView, TicketUpdateView,
     TicketCreateView, TicketAssignView,
-    RoleBasedDashboardView, AddCommentView, CustomerSignUpView, AdminCreateAgentView
+    RoleBasedDashboardView, AddCommentView, CustomerSignUpView, AdminCreateAgentView, logout_view
 )
 
 urlpatterns = [
     # Auth
     path('login/', LoginView.as_view(), name='login'),
+    path('logout/', logout_view, name='logout'),
     # Dashboards (role-based)
     path('dashboard/', RoleBasedDashboardView.as_view(), name='dashboard'),
     path('dashboard/admin/', views.AdminDashboardView.as_view(), name='admin-dashboard'),  

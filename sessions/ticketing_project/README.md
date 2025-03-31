@@ -74,14 +74,7 @@ The `.env` file is used to configure the database connection. Below are the vari
 | `POSTGRES_PORT`     | Port number for the database.        |
 | `POSTGRES_DATABASE` | Name of the database.                |
 
-Example `.env` file:
-```env
-POSTGRES_HOST=db
-POSTGRES_USERNAME=postgres
-POSTGRES_PASSWORD=qwerty
-POSTGRES_PORT=5432
-POSTGRES_DATABASE=db
-```
+
 # Dependencies
 
 The project uses the following dependencies:
@@ -111,6 +104,15 @@ The project uses the following dependencies:
 ### Set Up the Environment:
 
 Create a `.env` file in the project root and configure it as shown above.
+
+Example `.env` file:
+```env
+POSTGRES_HOST=db
+POSTGRES_USERNAME=postgres
+POSTGRES_PASSWORD=qwerty
+POSTGRES_PORT=5432
+POSTGRES_DATABASE=db
+```
 
 ### Start the Application: 
 Use the following command to build and start the application:
